@@ -38,18 +38,7 @@ def main():
     # Runs in a custom thread pool:
     with concurrent.futures.ThreadPoolExecutor(max_workers=10) as pool:
         # set some hosts will need to be a csv file later
-        hosts = [
-            "172.17.239.154",
-            "172.17.239.182",
-            "172.17.238.249",
-            "172.24.36.231",
-            "172.24.36.241",
-            "172.17.251.58",
-            "172.24.36.220",
-            "172.17.238.231",
-            "172.17.238.220",
-            "172.17.238.241",
-        ]
+        hosts = ["host Ips go here"]
         results = [pool.submit(sendCommand, host) for host in hosts]
 
         for f in concurrent.futures.as_completed(results):
